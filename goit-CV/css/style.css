@@ -1,0 +1,173 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f7fa;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ol,
+ul,
+li {
+  /* list-style: none; */
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  color: #fff;
+}
+
+.wrap {
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 40px;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 2px 16px rgb(0 0 0 / 24%);
+}
+
+.container-aside {
+  background: #3d3e42;
+  border-right: 2px solid white;
+  flex-shrink: 0;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  color: #4a4e51;
+}
+
+.container-aside-item {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.container-aside-item img {
+  padding-top: 20px;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.aside-item-title {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.aside-item-list {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.aside-item-list li + li {
+  margin-top: 8px;
+}
+
+.aside-item-list a,
+.project-list a {
+  color: #66cc99;
+  text-decoration: none;
+}
+
+.container-content {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  background: #3d3e42;
+  color: #9099a0;
+}
+
+.container-content-item {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.about-me-title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.about-me-profession {
+  font-size: 24px;
+  font-weight: 700;
+  color: #66cc99;
+}
+
+.about-me-summary {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.about-me-description,
+.work-experiеnce-period {
+  font-size: 16px;
+}
+
+.project-list-title {
+  font-size: 18px;
+}
+
+.work-experiеnce-block + .work-experiеnce-block {
+  margin-top: 16px;
+}
+
+.work-experience-position {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #66cc99;
+}
+
+.work-experience-position span {
+  color: #9099a0;
+}
+
+.project-list td {
+  width: 50%;
+}
+
+@media (max-width: 1024px) {
+  .wrap {
+    padding: 32px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container-aside,
+  .container-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap,
+  .container-aside-item,
+  .container-content-item {
+    padding: 16px;
+  }
+}
