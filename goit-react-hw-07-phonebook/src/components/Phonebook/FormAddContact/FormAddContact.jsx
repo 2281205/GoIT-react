@@ -5,18 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/Operation/operations';
 import { getContacts } from 'redux/Operation/selectors';
 
-
-      // import { useState } from 'react';
-      // import { useDispatch, useSelector } from 'react-redux';
-  // import { addContact } from 'redux/operations';
-  // import css from './ContactsForm.module.css';
-  // import { toast } from 'react-toastify';
-
-
-
-
-
-
 const FormAddContact = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
