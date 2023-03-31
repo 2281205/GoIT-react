@@ -8,6 +8,9 @@ const ContactList = () => {
   const contacts = useSelector(getFilteredContacts);
   const dispatch = useDispatch();
 
+
+  
+
   const handleRemoveContact = id => {
     const action = removeContact(id);
     dispatch(action);
