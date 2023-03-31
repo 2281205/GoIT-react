@@ -50,17 +50,19 @@ const renderContent = (cv) => {
                 const itemItem = itemList.map(item => `
                     <tr>
 				        <td>
-                            <li class="project-item">
-                            <span class="project-text">
-                                <a href="${item.link}" class="project-link">${item.nameProj}</a>
+                            <span class="project-list-title">
+                                <a href="${item.link}">${item.nameProj}</a>
                             </span>
                         </td>
 				        <td>
-                            <a href="${item.linkGit}" class="link-git">
-                            <span class="project-bracket"> [ </span>${item.skillProj}<span class="project-bracket"> ] </span>
+                            <a href="${item.linkGit}">
+                            <span> [ ${item.skillProj} ] </span>
                             </a>
                         </td>
-			        </tr>`);
+			        </tr>
+                    <tr>
+                        <td>${item.textProj}</td>
+                    </tr>`);
                 contentItem.innerHTML = `<h3 class="about-me-summary">${itemTitle}</h3>
                             <table class="project-list" style="width:fit-content;">
                                 <tbody>
@@ -71,7 +73,7 @@ const renderContent = (cv) => {
             if (itemStyle === 'inline') {
                 const itemItem = itemList.map(item => `
                     <div class="work-experiеnce-block">
-                        <h4 class="work-experience-position">${item.name} <span class="work-experience-company">${item.Corp}</span></h4>
+                        <h4 class="work-experience-position">${item.name} <br><span class="work-experience-company">${item.Corp}</span></h4>
                         <p class="work-experiеnce-period">${item.dataOn} - ${item.dataOff}
                         <span class="work-experience-location"> | ${item.place ? item.place: item.degree} </span>
                     </div>`);
@@ -94,12 +96,12 @@ const renderSidebar = (info,NameSurname) => {
        {
         const itemList = JSON.parse(JSON.stringify(info[prop]));
         const itemTitle = itemList.shift();
-        const itemItem = itemList.map(item => <li><span><a class="section-link" href="${Array.isArray(item) ? item[1] : item}}">${Array.isArray(item) ? item[0] : item}</a></span></li>);
+        const itemItem = itemList.map(item => `<li><span><a class="section-link" href="${Array.isArray(item) ? item[1] : item}}">${Array.isArray(item) ? item[0] : item}</a></span></li>`);
         
-        const asideItem = document.createElement (`div`);
+        const asideItem = document.createElement (`div`)
             asideItem.className = `container-aside-item`;
-            asideItem.innerHTML = `<h3 class="sidebar-title">${itemTitle}</h3>
-                                <ul class="skills-list">${itemItem.join('')}</ul>`;
+            asideItem.innerHTML = `<h3 class="aside-item-title">${itemTitle}</h3>
+                                <ul class="aside-item-list">${itemItem.join('')}</ul>`;
         aside.appendChild(asideItem);
        }
     }
