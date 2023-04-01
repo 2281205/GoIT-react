@@ -76,6 +76,7 @@ const renderContent = (cv) => {
                         <h4 class="work-experience-position">${item.name} <br><span class="work-experience-company">${item.Corp}</span></h4>
                         <p class="work-experiеnce-period">${item.dataOn} - ${item.dataOff}
                         <span class="work-experience-location"> | ${item.place ? item.place: item.degree} </span>
+                        ${item.achivment ? `<p>Achivment</p><br><span>${item.achivment}</span>` : ``}
                     </div>`);
                 contentItem.innerHTML = `<h3 class="about-me-summary">${itemTitle}</h3>
                 ${itemItem.join(``)}`;};
