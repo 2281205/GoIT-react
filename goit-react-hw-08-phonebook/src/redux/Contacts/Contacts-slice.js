@@ -11,7 +11,7 @@ const handlePending = state => {
   };
   
 
-  const contactsSlice = createSlice({
+  export const contactsSlice = createSlice({
     name: 'contacts',
     initialState: {
       contacts: [],

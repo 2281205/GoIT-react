@@ -7,7 +7,7 @@ import styles from './Phonebook.module.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/Contacts/operations';
-import Loader from './Loader/Loader';
+import Loader from '../Loader/Loader';
 
 const Phonebook = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const Phonebook = () => {
 
   return (
     <>
-      {error && alert('something wrong!')}
+      {error && alert(`something wrong! PHONEBOOK: <br> ${error}`)}
       {isLoading ? <Loader /> : 
       <div className={styles.container}>
         <h2 className={styles.title}>Contacts</h2>
