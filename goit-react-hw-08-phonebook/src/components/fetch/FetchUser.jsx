@@ -40,4 +40,3 @@ export const getCurrentUser = async (token) => {
 }
 
 export default instance;
-

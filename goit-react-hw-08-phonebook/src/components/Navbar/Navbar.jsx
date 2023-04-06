@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { isLogin } from 'redux/Auth/auth-selectors';
 import NavbarAuth from './NavbarAuth/NavbarAuth';
-//import NavbarMenu from './NavbarMenu/NavbarMenu';
 import NavbarUserMenu from './NavbarUserMenu/NavbarUserMenu';
 import styles from './Navbar.module.css';
 import { Navigation } from 'components/Navigation/Navigation';

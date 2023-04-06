@@ -6,8 +6,6 @@ export const getIsLoading = state => state.contacts.isLoading;
 
 export const getError = state => state.contacts.error;
 
-
-
 export const getFilteredContacts = ({contacts, filter}) => {  
     
     if (!filter) {
@@ -15,9 +13,9 @@ export const getFilteredContacts = ({contacts, filter}) => {
     }
 
     const normalizedFilter = filter.toLocaleLowerCase();
-    const filteredContacts = contacts.contacts.filter(({name, phone}) => {
+    const filteredContacts = contacts.contacts.filter(({name, number}) => {
         const normalizedName = name.toLocaleLowerCase();
-        const normalizedNumber = phone.toLocaleLowerCase();
+        const normalizedNumber = number.toLocaleLowerCase();
         const result = normalizedName.includes(normalizedFilter) || normalizedNumber.includes(normalizedFilter);
         return result;
     })

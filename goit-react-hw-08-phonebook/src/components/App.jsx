@@ -1,5 +1,3 @@
-        // import Phonebook from './Phonebook/Phonebook';
-
 import { Layout } from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -11,33 +9,15 @@ import { PrivateRoute } from "./PrivateRoute";
 import { RestrictedRoute }  from "./RestrictedRoute";
 import Loader from "./Loader/Loader";
 
-                // export const App = () => {
-                //   return (
-                //     <div
-                //       style={{
-                //         display: 'flex',
-                //         justifyContent: 'center',
-                //         alignItems: 'center',
-                //         fontSize: 40,
-                //         color: '#010101',
-                //       }}
-                //     >
-                //       <Phonebook />
-                //     </div>
-                //   );
-                // };
-
 const HomePage = lazy(() => import("../Pages/HomePage/HomePage"))
 const RegisterPage = lazy(() => import("../Pages/RegisterPage/RegisterPage"));
 const LoginPage = lazy(() => import("../Pages/LoginPage/LoginPage"));
 const ContactsPage = lazy(() => import("../Pages/ContactPage/ContactsPage"));
 
-
 export const App = () => {
 
   const dispatch = useDispatch();
   const isLoadingUser = useSelector(getLoadingUserStatus);
-  console.log('++++')
 
   useEffect(() => {
     dispatch(current());
@@ -68,5 +48,5 @@ export const App = () => {
         />
       </Route>
     </Routes>
-      )}
+)};
   

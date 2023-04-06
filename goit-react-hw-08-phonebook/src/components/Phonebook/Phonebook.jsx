@@ -20,7 +20,7 @@ const Phonebook = () => {
 
   return (
     <>
-      {error && alert(`something wrong! PHONEBOOK: <br> ${error}`)}
+      {error && alert(`something wrong! PHONEBOOK:  ${error}`)}
       {isLoading ? <Loader /> : 
       <div className={styles.container}>
         <h2 className={styles.title}>Contacts</h2>
