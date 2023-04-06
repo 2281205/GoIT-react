@@ -12,7 +12,7 @@ export default function NavbarUserMenu() {
     }
     return (
         <div>
-            <p>Hi! <b>{name}</b>, email: {email}</p>
+            <p>Hi, <b>{name}</b>! email: {email}</p>
             <button onClick={onlogout} className={styles.btn}>logout</button>
         </div>
     )
