@@ -5,7 +5,6 @@ import NavbarUserMenu from './NavbarUserMenu/NavbarUserMenu';
 import styles from './Navbar.module.css';
 import { Navigation } from 'components/Navigation/Navigation';
 
-
 export default function Navbar() {
     const isUserLogin = useSelector(isLogin);
     return (

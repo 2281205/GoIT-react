@@ -8,7 +8,6 @@ const ContactsFilter = () => {
   const filterValue = useSelector(getFilter);
 
   const handleChange = e => {
-    console.log(e);
     dispatch(setFilter(e.currentTarget.value));
   };
 

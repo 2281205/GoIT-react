@@ -1,33 +1,29 @@
 import { useState, useMemo } from 'react';
+import { useDispatch } from "react-redux";
+import { login } from "redux/Auth/auth-operations";
 import { nanoid } from "nanoid";
-import propTypes from "prop-types";
 import styles from "./LoginForm.module.css";
+const init = {
+    email: '',
+    password: '',
+};
 
-export default function LoginForm({ onSubmit }) {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
+function LoginForm() {
+    const dispatch = useDispatch();
+    const [form, setForm] = useState(init);
+    const { email, password } = form;
     const emailId = useMemo(()=> nanoid(), []);
     const passwordId = useMemo(() => nanoid(), []);
     
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        switch (name) {
-            case 'email':
-                setEmail(value);
-                break;
-            case 'password':
-                setPassword(value);
-                break;
-            default:
-                return;
-        }       
-    }
+    const handleChange = ({ target }) => {
+        const { name, value } = target;
+        setForm(prevState => ({ ...prevState, [name]: value }));
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ email, password });
-        setEmail("");
-        setPassword("");
+        dispatch(login({ email, password }));
+        setForm(init);
     }
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -55,7 +51,4 @@ export default function LoginForm({ onSubmit }) {
         </form>
     )
 }
-
-LoginForm.propTypes = {
-    onSubmit: propTypes.func.isRequired
-}
+export default LoginForm;

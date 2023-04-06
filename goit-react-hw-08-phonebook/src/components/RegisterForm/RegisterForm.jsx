@@ -1,40 +1,35 @@
 import { useState, useMemo } from 'react';
+import { signup } from "redux/Auth/auth-operations";
 import { nanoid } from "nanoid";
-import propTypes from "prop-types";
 import styles from "../LoginForm/LoginForm.module.css";
+import { useDispatch } from 'react-redux';
 
-export default function RegisterForm({ onSubmit }) {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+const init = {
+    name: '',
+    email: '',
+    password: ''
+};
 
+export default function RegisterForm() {
+    const dispatch = useDispatch();
+    const [form, setForm] = useState(init);
+    const { name, email, password } = form;
     const nameId = useMemo(()=> nanoid(), []);
     const emailId = useMemo(()=> nanoid(), []);
     const passwordId = useMemo(() => nanoid(), []);
     
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        switch (name) {
-            case 'name':
-                setName(value);
-                break;
-            case 'email':
-                setEmail(value);
-                break;
-            case 'password':
-                setPassword(value);
-                break;
-            default:
-                return;
-        }       
-    }
+    const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setForm(prevState => ({ ...prevState, [name]: value }));
+  };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ name, email, password });
-        setName("");
-        setEmail("");
-        setPassword("");
+        
+        dispatch (signup ({ name, email, password }) );
+        setForm(init);
     }
+
     return (
         <form onSubmit={handleSubmit}>
             <div className={styles.container}>
@@ -70,8 +65,4 @@ export default function RegisterForm({ onSubmit }) {
             <button onClick={handleSubmit} className={styles.btn} >Login</button>
         </form>
     )
-}
-
-RegisterForm.propTypes = {
-    onSubmit: propTypes.func.isRequired
 }
