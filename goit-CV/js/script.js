@@ -1,4 +1,5 @@
-import {info, cv }  from './info.js';
+import {infoEU, cvEU }  from './infoEU.js';
+import {infoRU, cvRU }  from './infoRU.js';
 
 document.querySelector(`body`).innerHTML = `
             <div class='wrap'>
@@ -7,6 +8,14 @@ document.querySelector(`body`).innerHTML = `
                     <div id="content"class='container-content'></div>
                 </div>
             </div>`;
+            
+let myUrl = new URL(document.location.href);
+!myUrl.searchParams.get('lang') && myUrl.searchParams.set('lang', 'RU');
+let localLang = myUrl.searchParams.get('lang')
+
+console.log(localLang)
+let cv = myUrl.searchParams.get('lang') === 'RU' ? cvRU : cvEU;
+let info = myUrl.searchParams.get('lang') === 'RU' ? infoRU : infoEU;
 
 document.title = cv.title;
 const NameSurname = cv.name+' '+cv.surname;
@@ -86,7 +95,26 @@ const renderContent = (cv) => {
     }
 };
 
+
 const renderSidebar = (info,NameSurname) => {
+    let asideBtn = document.createElement (`button`);
+        asideBtn.className = `container-aside-item`;
+        asideBtn.innerHTML = `<button id="lang">${localLang}</button>`;
+        aside.appendChild(asideBtn);
+    let btn = document.querySelector('#lang');
+        btn.addEventListener(`click`, e=>{
+            e.preventDefault();
+            myUrl.searchParams.get('lang') === 'RU' ? myUrl.searchParams.set('lang', 'EU') : myUrl.searchParams.set('lang', 'RU')
+            btn.innerHTML=`<button id="lang">${myUrl.searchParams.get('lang')}</button>`
+            console.log(`stalo: ${myUrl}`)
+            let localCV = myUrl.searchParams.get('lang') === 'RU' ? cvRU : cvEU;
+            let localInfo = myUrl.searchParams.get('lang') === 'RU' ? infoRU : infoEU;
+            Location.reload()
+            renderContent(localCV)
+            renderSidebar(localInfo,NameSurname)
+        })
+        
+
     let asideImg = document.createElement (`div`);
         asideImg.className = `container-aside-item`;
         asideImg.innerHTML = `<img src="${info.img}" width="200px" alt="${NameSurname}"/>`;

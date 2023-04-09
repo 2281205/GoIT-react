@@ -1,4 +1,4 @@
-const info = {
+const infoRU = {
     img: './images/me.png',
     contacts: ['Contacts',[`cellPhone`,'+380937099146'],'2281205@gmail.com',[`GIT`,'https://github.com/2281205'],[`linkedin`,'https://www.linkedin.com/in/mike-merzliakov/']],
     techSkills: ['Tech skills','HTML5','CSS3','GIT','WebPack','JavaScript','React.js','Node.js','REST API','Scrum','Agile','GTD','Note++'],
@@ -6,13 +6,13 @@ const info = {
     languageSkills: ['Language skills','Ukrainian — native','Russian — native','English — intermediate']
 };
 
-const cv = {
-    title: 'CV_Mike_Merzliakov',
-    name: 'Mike',
-    surname: 'Merzliakov',
-    targetCV: 'Junior Frontend Developer',
+const cvRU = {
+    title: 'RU_Mike_Merzliakov',
+    name: 'RU Mike',
+    surname: 'Merzliakov RU',
+    targetCV: 'Junior Frontend Developer__RU',
     summaryCV: 'I am a Junior Front-End developer with knowledge of HTML, CSS, JavaScript and React. I am looking for a job. English — Intermediate; I am communicative, hard-working and purposeful, responsible and always up for a challenge. I am an easy and fast learner, always open to new knowledge and skills. Development, practice and work for the result are important for me. I am skillful in analyzing problems and thinking of solve technical problems.',
-    additionalinfoCV: '+',
+    additionalinfoCV: '',
     projExperience: [
         'table',
         `Project Experience`,
@@ -98,8 +98,17 @@ const cv = {
             dataOff: 'April 2022',
             degree: 'Master',
             about: '...1'
+            },
+            {id:3,
+        name: 'Junior Javascript Developer',
+        Corp: 'Hillel -IT school, Kyiv',
+            dataOn: 'April 2021',
+            dataOff: 'April 2022',
+            degree: 'Master',
+            about: '...1'
             }
+            
     ]
 };
 
-export {info, cv } 
+export {infoRU, cvRU } 
