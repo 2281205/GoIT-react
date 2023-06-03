@@ -8,10 +8,9 @@ import sprite from '../img/icons/sprite.svg';
 import Olena from '../img/avatars/Olena.jpg';
 import Alexander from '../img/avatars/Alexander.jpg'
 import Lisa from '../img/avatars/Lisa.jpg'
-import Obema from '../img/avatars/Tim.jpg'
+import Tim from '../img/avatars/Tim.jpg'
 import graph from '../img/avatars/graph.png'
 
-console.log(graph)
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <div {  ...props} 
         className={ "slick-prev slick-arrow" + (currentSlide === 0 ? " slick-disabled" : "") }
@@ -68,7 +67,7 @@ export function StartPageMain(){
                 <Comment className='tr' src={Alexander} star={4} name='Alexander Hubbard'>GooseTrack is incredibly helpful, the sidebar with account management, 
                 calendar, and filter options make navigation seamless. Great for staying organized.</Comment>   
                 <Comment className='tr' src={Lisa} star={3} name='Lisa Olloc'>Good!</Comment>  
-                <Comment className='tr' src={Obema} star={5} name='Tim'>Excellent!</Comment>      
+                <Comment className='tr' src={Tim} star={5} name='Tim'>Excellent!</Comment>      
                 <Comment className='tr' src={graph} star={2} name='graph'>bad!</Comment>      
                 </Slider>
             </section>
