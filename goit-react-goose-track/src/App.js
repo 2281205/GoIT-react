@@ -1,11 +1,9 @@
-import { StartPageMain } from "./pages/MainPage";
+import { MainPage } from "./pages/MainPage";
 
 function App() {
   return (
-   
-                <StartPageMain></StartPageMain>
-            
-        );
-    }
+    <MainPage/>
+  );
+}
 
 export default App;

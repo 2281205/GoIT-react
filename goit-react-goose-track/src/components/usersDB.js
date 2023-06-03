@@ -6,7 +6,7 @@ export const users = [
      avatar: require('../img/avatars/Olena.jpg'),
     },
     { 
-     name: "Alexander Hubbard",
+     name: "Alexander Hubard",
      star: 3,
      text: "GooseTrack is incredibly helpful, the sidebar with account management, calendar, and filter options make navigation seamless. Great for staying organized.",
      avatar: require('../img/avatars/Alexander.jpg'),

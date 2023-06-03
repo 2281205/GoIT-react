@@ -1,7 +1,7 @@
 import styled from "styled-components";
 const mainBlue='#3E85F3';
 
-export const MainPage = styled.main`
+export const MainPageStyled = styled.main`
 font-family: "Inter";
 display: flex;
 flex-direction: column;

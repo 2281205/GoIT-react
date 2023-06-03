@@ -3,7 +3,7 @@ import Slider from "react-slick";
 
 import { Comment } from "../components/Comment";
 import { users } from "../components/usersDB"
-import { MainPage } from "./MainPage.styled";
+import { MainPageStyled } from "./MainPage.styled";
 import sprite from '../img/icons/sprite.svg';
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -31,7 +31,7 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
 );
 
 
-export function StartPageMain(){
+export function MainPage(){
 
       const settings={
         dots: false,
@@ -53,7 +53,7 @@ export function StartPageMain(){
       }
     
 return(
-    <MainPage>
+    <MainPageStyled>
         <section className="content-review">
             <h2 className="content-h2">Reviews</h2>
             <Slider  className="slider"  {...settings} >
@@ -62,4 +62,4 @@ return(
                 }
             </Slider>
         </section>
-    </MainPage>);}
+    </MainPageStyled>);}
