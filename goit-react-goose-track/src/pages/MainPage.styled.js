@@ -85,7 +85,7 @@ padding-bottom: 64px;
 & .slick-arrow{
     position: absolute;
     bottom:0;
-    z-index: 20;  
+    border: 1px red solid;
 }
 
 & svg.svg-arrow{

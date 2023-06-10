@@ -5,32 +5,33 @@ import { Comment } from "../components/Comment";
 import { users } from "../components/usersDB"
 import { MainPageStyled } from "./MainPage.styled";
 import sprite from '../img/icons/sprite.svg';
+import CurrentTeam from "../components/CurrentTeam"
 
-const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-  <div {  ...props} 
-        className={ "slick-prev slick-arrow" + (currentSlide === 0 ? " slick-disabled" : "") }
-        aria-hidden="true"
-        aria-disabled={false}
-        type="button">
-      <svg height="6" width="39" className="svg-arrow">
-          <use href={sprite+'#arRight'}></use>
-      </svg>
-  </div>
-);
+// const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+//   <div {  ...props} 
+//         className={ "slick-prev slick-arrow" + (currentSlide === 0 ? " slick-disabled" : "") }
+//         aria-hidden="true"
+//         aria-disabled={false}
+//         type="button">
+//       <svg height="6" width="39" className="svg-arrow">
+//           <use href={sprite+'#arRight'}></use>
+//       </svg>
+//   </div>
+// );
 
-const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-  <div {...props}
-        className={ "slick-next slick-arrow" + (currentSlide === slideCount - 1 ? " slick-disabled" : "") }
-        aria-hidden="true"
-        aria-disabled={ false}
-        type="button">
-      <svg height="6" width="39" className="svg-arrow">
-          <use href={sprite+'#arLeft'}></use>
-      </svg>
-  </div>
-);
+// const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+//   <div {...props}
+//         className={ "slick-next slick-arrow" + (currentSlide === slideCount - 1 ? " slick-disabled" : "") }
+//         aria-hidden="true"
+//         aria-disabled={ false}
+//         type="button">
+//       <svg height="6" width="39" className="svg-arrow">
+//           <use href={sprite+'#arLeft'}></use>
+//       </svg>
+//   </div>
+// );
 
-
+//console.log(SlickArrowLeft,SlickArrowRight)
 export function MainPage(){
 
       const settings={
@@ -48,12 +49,13 @@ export function MainPage(){
                 }
             }
         ],
-        nextArrow:<SlickArrowRight></SlickArrowRight>,
-        prevArrow:<SlickArrowLeft></SlickArrowLeft>
+        // nextArrow:<SlickArrowRight></SlickArrowRight>,
+        // prevArrow:<SlickArrowLeft></SlickArrowLeft>
       }
     
 return(
     <MainPageStyled>
+        <CurrentTeam />
         <section className="content-review">
             <h2 className="content-h2">Reviews</h2>
             <Slider  className="slider"  {...settings} >
@@ -62,4 +64,5 @@ return(
                 }
             </Slider>
         </section>
+
     </MainPageStyled>);}

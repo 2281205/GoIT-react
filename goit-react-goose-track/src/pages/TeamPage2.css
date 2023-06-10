@@ -1,0 +1,147 @@
+:root {
+  --black-text-color: #000000;
+  --white-text-color: #ffffff;
+  --light-text-color: #8c8c8c;
+  --dark-text-color: #3E85F3;
+  --accent-text-color: #ff6b08;
+  --mainBGL: #e5e5e5;
+  --lightBG: #f7f7f7;
+  --accentBG: #ff6b01;
+  --modal-overlay: rgba(0, 0, 0, 0.25);
+  --modal-movie-bgc: #ffffff;
+  --Gap16: 16px;
+  --Gap20: 20px;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 250ms;}
+
+/* 
+body {
+  outline: 1px, red, solid;
+  background: lime;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+} */
+
+/* {footer,container,footer__text,footer__text__students}   */
+  /* {footer-modal footer-modal__container footer-modal__body footer-modal__team
+  footer-modal__button-close modal-close footer-modal__icon} */
+
+
+/* .footer-modal{
+background-color: blueviolet;
+} */
+.modal.active .footer-modal__body{
+  transform: translate(0px, 0px);
+  opacity: 1;
+  }
+  /* 
+  // ---------Розміщення модалки на сторінці---------- */
+  
+  .footer-modal__container {
+  background-color: blueviolet;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+  }
+  /* 
+  // ------------------Тіло модалки---------------------- */
+  
+  .footer-modal__body {  
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width: 280px;
+    height: 580px;
+
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    background-color: var(--modal-movie-bgc);
+    overflow: hidden;
+  
+  
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+/*     
+    transform: translate(0px, -100%);
+     @include mobile {
+  }
+  
+     @include tablet {
+  }
+  
+     @include pc {
+    width: 900px;
+    height: 600px;
+  } */
+  }
+  /* 
+  // ------------- Кнопка закриття модалки ------------ */
+  
+  .footer-modal__button-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-color: transparent;
+    color: var(--black-text-color);
+    stroke: currentColor;
+    fill: currentColor;
+    border-color: transparent;
+    transition: color var(--duration) var(--cubic);
+    padding: 0;
+    cursor: pointer;
+  }
+  /* 
+  // Контент в середені кнопки закриття модалки */
+  
+  .footer-modal__icon:hover,
+  .footer-modal__icon:focus {
+    color: var(--accent-text-color);
+  }
+  .footer-modal__team {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+  
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3em;
+  
+    color: var(--accent-text-color);
+    text-align: left;
+  }
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
