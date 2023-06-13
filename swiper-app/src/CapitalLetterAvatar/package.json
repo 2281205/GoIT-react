@@ -1,0 +1,12 @@
+{
+    "dependencies": {
+      "@material-ui/core": "latest",
+      "react": "latest",
+      "react-dom": "latest"
+    },
+    "description": "https://github.com/mui-org/material-ui/blob/v4.x/docs/src/pages/components/avatars/LetterAvatars.js",
+    "devDependencies": {
+      "react-scripts": "latest"
+    },
+    "title": "Material demo"
+  }

@@ -136,14 +136,27 @@ padding: 30px 10px;
 // Cтилі для слайдеру------------------------------------------ */
 
 .mySwiper {
-width: 500px;
+width: 280px;
 height: 600px;
 }
 .footer-modal__body {
 padding: 40px;
 }
+/* 
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+   Center slide text vertically 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 .swiper__item {
-width: 200px;
+  
+width: 280px;
 padding: 35px;
 background: linear-gradient(180deg, rgb(247, 246, 244) 0%, var(--accentBG) 100%);
 border-radius: 50px;
@@ -231,6 +244,7 @@ display: flex;
 justify-content: center;
 gap: 20px;
 margin-top: 10px;
+list-style: "";
 }
 
 .swiper__link {

@@ -5,18 +5,15 @@ import "./CurrentTeam.css";
 
 const CurrentTeam = ({name,surName,position,git,linkedin,description,avatar}) =>{
   const keyId = nanoid();
-console.log(keyId)
+
 
   
       return (
-     //   mySwiper  swiper-wrapper  swiper-slide swiper__item border__outside  swiper__img
-     // swiper__name  swiper__subtitle  swiper__soc-list list  swiper__soc-item  swiper__link  swiper__icon  
-   // swiper__text__container swiper__text  swiper-pagination  swiper-button-prev  swiper-button-next
-
       <div className="mySwiper">
+         
         <div className="swiper-wrapper">
-      
-          <div className="swiper-slide swiper__item">
+        {/* swiper-slide */}
+          <div key={keyId} className=" swiper__item">
             <div className="border__outside">
               <div className="swiper__img">
                
@@ -31,15 +28,8 @@ console.log(keyId)
             <h3 className="swiper__subtitle">{position}</h3>
             
             <ul className="swiper__soc-list list">
-              <li key={keyId} className="swiper__soc-item">
-              <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+              <li key={keyId+1} className="swiper__soc-item">
+             
                 <a href={git} target="_blank" rel="noopener noreferrer" className="swiper__link">
                   <svg className="swiper__icon" width={30} height={30}>
                       <use href={sprite+'#icon-github'} />
@@ -47,14 +37,14 @@ console.log(keyId)
                 </a>
 
               </li>
-              </ul>
-                <a href={"https://google.com"} target="_blank" rel="noreferrer">
+              <li key={keyId+2} className="swiper__soc-item">
+                <a href={linkedin} target="_blank" rel="noreferrer" className="swiper__link">
                   <svg className="swiper__icon" width={30} height={30}>
                   <use href={sprite+'#icon-linkedin'} />
                   </svg>
                 </a>
-              
-
+                </li>
+                </ul>
            
 
             <div className="swiper__text__container">
@@ -67,9 +57,6 @@ console.log(keyId)
         <div className="swiper-button-prev" />
         <div className="swiper-button-next" />
       </div>
-
-
-
 
     )
 

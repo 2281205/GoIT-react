@@ -14,8 +14,6 @@
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --duration: 250ms;
 }
-/* {footer,container,footer__text,footer__text__students}  */
-
   .footer {
     display: flex;
     justify-content: center;
@@ -47,24 +45,3 @@
     padding-right: 20px;
     margin: 0 auto;
 }
-
-
-/* 
-
-.swiper {
-  width: 300px;
-  height: 300px;
-  padding: 50px;
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-} */

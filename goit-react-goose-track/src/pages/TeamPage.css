@@ -14,48 +14,56 @@
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --duration: 250ms;}
 
-/* 
-body {
-  outline: 1px, red, solid;
-  background: lime;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-} */
-
-/* {footer,container,footer__text,footer__text__students}   */
-  /* {footer-modal footer-modal__container footer-modal__body footer-modal__team
-  footer-modal__button-close modal-close footer-modal__icon} */
-
-
-/* .footer-modal{
-background-color: blueviolet;
-} */
-.modal.active .footer-modal__body{
-  transform: translate(0px, 0px);
-  opacity: 1;
+  .modal{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0,5s;
   }
-  /* 
-  // ---------Розміщення модалки на сторінці---------- */
-  
-  .footer-modal__container {
+
+  .modal.active{
+     opacity: 1;
+     pointer-events: all;
+  }
+
+  .modal__content{
+      margin: 0 auto;
+      transform: scale(0.5);
+      transition: 0.4s all;
+  }
+
+  .modal__content.active{
+      transform: scale(1);
+  }
+
+  .modal.active .footer-modal__body{
+      transform: translate(0px, 0px);
+      opacity: 1;
+  }
+ 
+
+
+.footer-modal__container {
   background-color: blueviolet;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 10px;
-  }
-  /* 
-  // ------------------Тіло модалки---------------------- */
+  padding: 30px 10px 5px 10px;
+}
   
-  .footer-modal__body {  
-  
+.footer-modal__body {  
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
     width: 280px;
     height: 580px;
 
@@ -64,51 +72,32 @@ background-color: blueviolet;
     border-radius: 5px;
     background-color: var(--modal-movie-bgc);
     overflow: hidden;
-  
-  
     transition: all 0.8s ease 0s;
     opacity: 0;
-/*     
-    transform: translate(0px, -100%);
-     @include mobile {
-  }
+}
   
-     @include tablet {
-  }
-  
-     @include pc {
-    width: 900px;
-    height: 600px;
-  } */
-  }
-  /* 
-  // ------------- Кнопка закриття модалки ------------ */
-  
-  .footer-modal__button-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    background-color: transparent;
-    color: var(--black-text-color);
-    stroke: currentColor;
-    fill: currentColor;
-    border-color: transparent;
-    transition: color var(--duration) var(--cubic);
-    padding: 0;
-    cursor: pointer;
-  }
-  /* 
-  // Контент в середені кнопки закриття модалки */
+.footer-modal__button-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: var(--black-text-color);
+  stroke: currentColor;
+  fill: currentColor;
+  border-color: transparent;
+  transition: color var(--duration) var(--cubic);
+  padding: 0;
+  cursor: pointer;
+}
   
   .footer-modal__icon:hover,
   .footer-modal__icon:focus {
     color: var(--accent-text-color);
   }
+  
   .footer-modal__team {
     position: absolute;
     top: 10px;
